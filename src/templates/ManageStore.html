@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/jquery-1.4.4.js"></script>
+<script type="text/javascript" src="/javascript/DeleteBlog.js"></script>
+{% endblock %}
+
+{% block title %}Manage Store{% endblock %}
+
+{% block main %}
+	<div id="ManageStore" class="main">
+		<h1>Manage Store</h1>
+    	<form action="/ManageStore" method="post" enctype="multipart/form-data">
+    		<h2>Please enter the merchant id</h2>
+    		<p><input type="text" name="merchantId" value="{{ store.merchantid }}"/></p>
+    		<h2>Use sandbox? (true/false)</h2>
+    		<p><input type="text" name="useSandbox" value="{{ store.useSandbox }}"/></p>
+    		<h2>About Us description</h2>
+    		<p><textarea rows="6" cols="80" name="aboutUsDescription">{{ store.aboutUsDescription }}</textarea></p>
+    		<h2>Current Promotion</h2>
+    		<p><textarea rows="6" cols="80" name="currentPromotion">{{ store.currentPromotion}}</textarea></p>
+    		<h2>News And Info</h2>
+    		<p><textarea rows="6" cols="80" name="newsAndInfo">{{ store.newsAndInfo}}</textarea></p>
+    		<h2>Blog or other</h2>
+    		<p><textarea rows="6" cols="80" name="talkBox">{{ store.talkBox }}</textarea></p>
+    		{% include 'hiddenForm.html' %} 		
+            <p><input value="Save" type="submit"/></p>
+        </form>
+    </div>
+{% endblock %}

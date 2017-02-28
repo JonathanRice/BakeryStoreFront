@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}All Blog Entries{% endblock %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/DeleteBlog.js"></script>
+{% endblock %}
+{% block main %}
+	<div id="blogEntries" class="main">
+	<h1>All Blog Entries</h1>
+	<p>
+		<table cellspacing="0">
+		{% for blogEntry in blogEntries %}
+			<tr class="{% cycle odd,even %}">
+				<td width="400px"><a href="/ViewBlogEntry?blog_id={{ blogEntry.key }}">{{blogEntry.title}}</a></td>
+			{% if isAdmin %}
+				<td><a class="button" href="/CreateEditBlog?blog_id={{ blogEntry.key }}">Edit</a>&nbsp;</td> 
+				<td><a class="button" warning="Delete this blog entry?" href="/DeleteBlogEntry?blog_id={{ blogEntry.key }}">Delete</a></td>
+			{% endif %} 
+			</tr>
+		{% endfor %}
+		</table>
+	</p>
+	</div>
+	{% if firstPage %}
+	<a href="/ViewAllEntries?page={{ firstPage }}">First</a> 
+	{% endif %}
+	{% if previousPage %}
+	<a href="/ViewAllEntries?page={{ previousPage }}">Previous</a> 
+	{% endif %}
+	{% if currentPage %}
+	<a href="/ViewAllEntries?page={{ currentPage }}">Current ({{ currentPage }})</a> 
+	{% endif %}
+	{% if nextPage %}
+	<a href="/ViewAllEntries?page={{ nextPage }}">Next</a> 
+	{% endif %}
+	{% if lastPage %}
+	<a href="/ViewAllEntries?page={{ lastPage }}">Last</a> 
+	{% endif %}
+{% endblock %}

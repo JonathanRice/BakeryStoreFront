@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/json2.js"></script>
+<script type="text/javascript" src="/javascript/EditBlog.js"></script>
+{% endblock %}
+
+{% block title %}Create blog entry{% endblock %}
+
+{% block main %}
+	<div id="editarea" class="main">
+		<h1>{{ editBlog.title }}</h1>
+		{{ editBlog.html }}
+	</div>
+	<br>
+	<div id="edit">
+		<form name="EditForm" action="/CreateEditBlog" enctype="multipart/form-data" method="post">
+			<div id="titleDiv" class="titleDiv"><b>Title: </b><input type="text" name="titleInput" id="titleInput" class="titleInput" value="{{ editBlog.title }}"></div>
+            <div><textarea id="textarea" name="textarea" rows="10" cols="91">{{ editBlog.markdown }}</textarea></div>
+            <a class="button" href="javascript: document.EditForm.submit()">Submit</a>
+            <input type="hidden" name="EditBlogKey" value="{{ editBlog.key }}">
+        </form>		
+	</div>	
+{% endblock %}

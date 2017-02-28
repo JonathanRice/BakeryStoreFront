@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head_script %}{% endblock %}
+
+{% block title %}Products{% endblock %}
+
+{% block main %}
+<div id="productinfo" class="main">
+<table width="790">
+{% for row in entryTable %}
+	<tr>
+	{% for product in row %}
+		<td>
+			<a href="/Products/{{ product.name }}"><img src="{{ product.imagePath }}" alt="{{ product.name }}"/></a>
+			<p><a href="/Products/{{ product.name }}">{{ product.name }}</a></p>
+			<p>${{ product.price }}<p>
+		</td>
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+</div>	
+{% endblock %}

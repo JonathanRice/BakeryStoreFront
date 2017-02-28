@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheet/main.css" />
+		{% block head_icon %}  {% endblock %}
+		<title>{% block title %}Deanna&#39;s Store{% endblock %}</title>
+		{% block head_style %} {% endblock %}		
+		<script type="text/javascript" src="/javascript/jquery-1.4.4.js"></script>
+		{% block head_script %} {% endblock %}  
+	</head>
+	<body>
+		<div id="header" class="header">
+			<div id="lheader" class="leftHeader">
+				<h2>Ronk!</h2>
+			</div>
+			<div id="rheader" class="rightHeader">
+			{% if not user %}
+				<a href="{{ login_url }}">Login</a> 
+			{% endif %}
+			{% if user %}
+				<a href="{{ logout_url }}">Logout</a> 
+			{% endif %}
+			</div>
+		</div>
+		<div class="clear"/>
+		<div id="left" class="left">
+		{% block navigation %}
+			<div id="navigation" class="navigation">
+				<h4>Navigation</h4>
+				<div id="navInside" class="navInside">
+					<ul id="navList">
+						<li><b>Recent Entries</b>
+							<ul>
+							{% for blogEntry in recentBlogs %}
+								<li><a href="/ViewBlogEntry?blog_id={{blogEntry.key}}">{{blogEntry.title|slice:":20"}}</a></li>
+							{% endfor %}
+							</ul>
+						</li>
+						<li><a href="/ViewAllEntries">View All</a></li>
+						{% if isAdmin %}
+							<li><a href="/CreateEditBlog">Create Blog</a></li>
+							<li><a href="/FileUpload">Manage Files</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		{% endblock %}
+		</div>
+		<div id="right" class="right">
+		{% block main %}
+			<div id="main" class="main">
+				<h1>Nothing Here</h1>
+				<p>Move along please</p>
+			</div>		
+		{% endblock %}	
+		</div>
+		<div class="clear"/>
+		{% block footer %}
+			<div id="bottom">
+				<br/>
+				<br/>
+				<center>
+					<p><h5>This is the footer.  Not really sure what to put here.</h5></p>					
+				</center>
+			</div>
+		{% endblock %}
+	</body>
+</html>

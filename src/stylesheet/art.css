@@ -1,0 +1,203 @@
+body {
+    background-color: #F1DAA1;
+    color: #222222; 
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 9px;
+    margin: 0;
+    padding: 0;
+}
+
+#navholder {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 30px;
+}
+#navlist {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 50px;
+	font-family:"Calibri",monospace;
+	font-size: 1.5em;
+}
+
+#navlist ul {
+	float: right;
+}
+
+#navlist li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+#navlist li:before {
+	content: "| ";
+}
+#navlist li:first-child:before {
+	content: "";
+}
+
+#outerborder {
+	margin: 0px auto;
+	margin-top: 25px;
+	padding-left: 1px;
+	padding-right: 3px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #31849B;
+	width: 850px;
+	overflow: hidden;
+}
+#innerborder {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #996600;
+	padding-bottom: 1px;
+	margin-bottom: 0px;
+	width: 100%;
+	overflow: hidden;
+}
+#content {
+	width: 100%;
+	height: 100%;
+}
+#contactUsMain {
+	width: 100%;
+	height: 100%;
+	font-size: 1.5em;
+}
+#cartband {
+	height: 30px;
+	width: 100%;
+	margin-top: 30px;
+	font-family:"Calibri",monospace;
+	font-size: 1.5em;
+}
+#cart {
+	float: right;
+	margin-right: 40px;
+}
+#namelogo {
+	background-color: #FFFFFF;
+	border: solid;
+	border-width: 1px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 0px;
+	height: 65px;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 2.5em;
+	color: #239191;
+	border-color: #000000;
+}
+
+#centercontent {
+	border-top: solid;
+	border-width: 2px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+#centerleft {
+	width: 60%;
+	float: left;
+	margin-top: 10px;
+}
+#centerright {
+	width: 40%;
+	float: right;
+}
+#talkbox {
+	background-color: #FFFFFF;
+	color: #31849B;
+	border: solid;
+	border-width: 1px;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#bottombar {
+	margin: 0px auto;
+	margin-top:5px;
+	margin-bottom: 15px;
+	width: 650px;
+}
+#copyright {
+	margin-top: 10px;
+	float: left;
+}
+
+
+#signin {
+	float: right;
+}
+
+#signin ul {
+	list-style: none;
+}
+
+#signin li {
+	display: inline;
+}
+
+#signin li:before {
+	content: "| ";
+}
+#signin li:first-child:before {
+	content: "";
+}
+#slider {
+    position:relative;
+    width: 474px; /* Change this to your images width */
+    height: 474px; /* Change this to your images height */
+    background:url(/images/RunwayShoot-1.jpg) no-repeat 50% 50%;
+}
+#slider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+}
+#slider a {
+    border:0;
+    display:block;
+}
+#administrationMain {
+	width: 100%;
+	height: 100%;
+	font-size: 1.5em;
+}
+#productleft {
+	width: 75%;
+	float: left;
+	font-size: 1.5em;
+}
+#productright {
+	width: 25%;
+	float: right;
+	font-size: 1.5em;
+}
+#productDescription {
+	width: 650px;
+	height: 100%;
+	font-size: 1.5em;
+	float: left;
+}
+#productinfo {
+	font-size: 1.5em;
+}
+#aboutUsLeft {
+	width: 55%;
+	float: left;
+	font-size: 1.5em;
+}
+#aboutUsRight {
+	width: 45%;
+	float: right;
+	font-size: 1.5em;
+}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/jquery-1.4.4.js"></script>
+<script type="text/javascript" src="/javascript/DeleteBlog.js"></script>
+{% endblock %}
+
+{% block title %}Create Product{% endblock %}
+
+{% block main %}
+	<div id="CreateProduct" class="main">
+		<h1>Create Product</h1>
+    	<form action="/CreateProduct" method="post" enctype="multipart/form-data">
+    		<h2>Please enter the product name</h2>
+    		<p><input type="text" name="productName"/></p>
+    		<h2>Please enter the product description</h2>
+    		<p><textarea rows="6" cols="80" name="productDescription"></textarea></p>
+    		<h2>Please enter the price</h2>
+    		<p><input type="text" name="productPrice"/></p>
+    		<h2>Please enter the product image</h2>
+    		<p><input type="file" name="prductImage"/></p>
+    		<h2>Please enter the product Detail image</h2>
+    		<p><input type="file" name="prductDetailImage"/></p>
+    		{% include 'hiddenForm.html' %} 		
+            <p><input value="Create" type="submit"/></p>
+        </form>
+    </div>
+    <br>
+    <div id="ProductList" class="main">
+    	<h1>All Products</h1>
+		<p>
+			<table cellspacing="0">
+			{% for productEntry in dbEntries %}
+				<tr class="{% cycle odd,even %}">
+					<td width="100px"><a href="/Products/{{ productEntry.name }}">{{ productEntry.name}}</a></td>
+					<td width="50px">Price: {{ productEntry.price }}</td>
+					<td width="50px"><a href="{{ productEntry.imagePath }}">Image</a></td>
+				{% if isAdmin %} <!-- TODO we needto figure out a good way of deleting files -->
+					<td><a class="button" warning="Delete this product entry?" href="/DeleteProduct?product_id={{ productEntry.key }}">Delete</a></td>
+				{% endif %} 
+				</tr>
+			{% endfor %}
+			</table>
+		</p>
+		{% if firstPage %}
+		<a href="/CreateProduct?page={{ firstPage }}">First</a> 
+		{% endif %}
+		{% if previousPage %}
+		<a href="/CreateProduct?page={{ previousPage }}">Previous</a> 
+		{% endif %}
+		{% if currentPage %}
+		<a href="/CreateProduct?page={{ currentPage }}">Current ({{ currentPage }})</a> 
+		{% endif %}
+		{% if nextPage %}
+		<a href="/CreateProduct?page={{ nextPage }}">Next</a> 
+		{% endif %}
+		{% if lastPage %}
+		<a href="/CreateProduct?page={{ lastPage }}">Last</a> 
+		{% endif %}
+    </div>
+{% endblock %}

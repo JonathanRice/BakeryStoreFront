@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_script %}{% endblock %}
+
+{% block title %}Products{% endblock %}
+
+{% block main %}
+<div id="editarea" class="main">
+	<h1>About Us</h1>
+	<div id="aboutUsLeft">
+		<img src="/images/FinalHeadShot.jpg" alt="Deanna Durbin"/>
+	</div>
+	<div id="aboutUsRight">
+		<p>{{ store.aboutUsDescription }}</p>
+	</div>
+</div>	
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/jquery-1.4.4.js"></script>
+<script type="text/javascript" src="/javascript/DeleteBlog.js"></script>
+{% endblock %}
+
+{% block title %}Upload a file{% endblock %}
+
+{% block main %}
+	<div id="FileSubmit" class="main">
+		<h1>File Upload</h1>
+    	<form action="FileUpload" method="post" enctype="multipart/form-data">
+    		<h2>Please enter a file to upload</h2>
+    		<p>
+        		<input type="file" name="file"/>
+        		{% include 'hiddenForm.html' %}
+            	<input type="submit"/>
+            </p>
+        </form>
+    </div>
+    <br>
+    <div id="FileDownload" class="main">
+    	<h1>All Files</h1>
+		<p>
+			<table cellspacing="0">
+			{% for fileEntry in dbEntries %}
+				<tr class="{% cycle odd,even %}">
+					<td width="400px"><a href="/Files/{{ fileEntry.name }}">{{ fileEntry.name}}</a></td>
+				{% if isAdmin %} <!-- TODO we needto figure out a good way of deleting files -->
+					<td><a class="button" warning="Delete this file entry?" href="/DeleteFile?file_id={{ fileEntry.key }}">Delete</a></td>
+				{% endif %} 
+				</tr>
+			{% endfor %}
+			</table>
+		</p>
+		{% if firstPage %}
+		<a href="/FileUpload?page={{ firstPage }}">First</a> 
+		{% endif %}
+		{% if previousPage %}
+		<a href="/FileUpload?page={{ previousPage }}">Previous</a> 
+		{% endif %}
+		{% if currentPage %}
+		<a href="/FileUpload?page={{ currentPage }}">Current ({{ currentPage }})</a> 
+		{% endif %}
+		{% if nextPage %}
+		<a href="/FileUpload?page={{ nextPage }}">Next</a> 
+		{% endif %}
+		{% if lastPage %}
+		<a href="/FileUpload?page={{ lastPage }}">Last</a> 
+		{% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head_script %}{% endblock %}
+
+{% block title %}Products{% endblock %}
+
+{% block main %}
+<div id="productarea" class="main">
+	<h1>{{ productEntry.name}}</h1>
+	<div id="productleft">
+		<img src="{{ productEntry.imageDetailPath }}" alt="{{ productEntry.name }}"/>
+	</div>
+	<div id="productright">
+		<p>Price: {{ productEntry.price }}</p>
+		<div class="product">
+			<input type="hidden" class="product-title" value="{{ productEntry.name }}">
+			<input type="hidden" class="product-image" value="{{ productEntry.imagePath }}">
+			<input type="hidden" class="product-price" value="{{ productEntry.price }}">
+			<div class="googlecart-add-button" tabindex="0" role="button" title="Add to cart"></div>
+		</div>
+	</div>
+	
+	<div id="productDescription">
+		<p>{{ productEntry.description }}</p>
+	</div>
+</div>	
+{% endblock %}

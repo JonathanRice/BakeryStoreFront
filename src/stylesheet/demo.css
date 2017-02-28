@@ -1,0 +1,120 @@
+body {
+	font: 62.5% Arial, Helvetica, sans-serif;
+	color: #633903;
+	margin: 0;
+	padding: 0;
+	background: #fbeeda;
+}
+
+h1, h2 {
+	color: #AAAAAA;
+	font-family: Tahoma, Arial, Geneva, sans-serif;
+	margin: 20px 0 10px;
+}
+
+p {
+	margin: 10px 0;
+	padding: 0;
+}
+
+
+#header-wrap {
+     top:0;
+     left:0;
+     width:100%;
+	 background-color:#964e42;
+	 overflow: hidden;
+}
+
+#header {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+#header p {
+	font-family: "Apple Chancery", "Zapf Chancery", cursive;
+	font-size: 3.2em;
+}
+
+#header ul {
+	list-style: none;
+}
+
+#header ul li {
+	float: left;
+	margin-right: 5px;
+}
+li.header-tab-selected {
+	width: 125px;
+	height:30px;
+	background: #fbeeda;
+	background: url(../images/TabGradientSelected.png) repeat-x left top;
+	text-align: center;
+}
+
+li.header-tab-unselected {
+	width: 125px;
+	height:30px;
+	background: url(../images/TabGradientUnselected.png) repeat-x left top;
+	text-align: center;
+}
+
+#header ul li a{
+	color: #633903;
+	font-weight: bold;
+	font-size: 2.0em;
+	text-decoration: none;
+}
+
+#container {
+	width: 940px;
+	margin: 0 auto;
+	font-size: 1.2em;
+}
+
+#content {
+	float: left;
+	width: 625px;
+}
+
+#sidebar {
+	float: right;
+	width: 275px;
+	margin-top: 10px;
+}
+
+#footer-wrap {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+    overflow: auto;
+}
+
+#footer-container {
+	background: url(../images/StraightFooter.png) repeat-x left top;
+	height: 40px;
+}
+
+#footer {
+	width: 940px;
+	margin: 0 auto;
+	color: #fbeeda;
+	font-size: 1.2em;
+	position: relative;
+}
+
+#footer a {
+	color: #AAAAAA;
+}
+
+#footer p.copy {
+	position: absolute;
+	top: 5px;
+	left: 0;
+}
+
+#footer p.link {
+	position: absolute;
+	top: 5px;
+	right: 0;
+}

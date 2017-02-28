@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ blogEntry.title }}{% endblock %}
+{% block head_script %}
+<script type="text/javascript" src="/javascript/DeleteBlog.js"></script>
+{% endblock %}
+{% block main %}
+	<div id="blogEntry" class="main">
+	<h1>{{ blogEntry.title }}</h1>
+	{{ blogEntry.html }}
+	</div>
+	{% if isAdmin %}
+		<a class="button" id="edit" href="/CreateEditBlog?blog_id={{ blogEntry.key }}">Edit</a>&nbsp;
+		<a class="button" id="delete" warning="Delete this blog entry?" href="/DeleteBlogEntry?blog_id={{ blogEntry.key }}">Delete</a>
+	{% endif %}
+	<br><br>
+	{% if comments %}
+		<div id="comments" class="main comment">
+		<h2>Comments:</h2>
+		{% for comment in comments %}
+		<hr> 
+		<dl class="commentdl"><dt>{{ comment.name }} said...<dt><dd class="commentdd">{{ comment.html }}</dd></dl>
+			{% if isAdmin %}
+				<p><a class="button" warning="Delete this comment entry?" href="/DeleteCommentEntry?comment_id={{ comment.key }}&blog_id={{ blogEntry.key }}">Delete</a></p>
+			{% endif %}
+		{% endfor %}
+		</div>
+	{% endif %}
+	<br><br>
+	<div id="edit" class="main comment">
+	<!--  We should probably extract this whole portion somehow this is a dupe from edit -->
+		<form name="CommentEditForm" action="/AddCommentToBlog.do" enctype="multipart/form-data" method="post">
+			<p><b>Comment form:</b><br></p>
+			<table>
+		  		<tr>
+					<td><b>Name: </b></td><td><input type="text" name="nameInput" class="nameInput"></td>
+		  		</tr>	
+		  		<tr>
+					<td><b>Title: </b></td><td><input type="text" name="titleInput"></td>
+		  		</tr>
+			</table>
+			<p>
+	            <textarea name="textarea" rows="10" cols="90"></textarea>
+    	        I'm a human: <input type="checkbox" name="isHuman"><br>
+        	    <a class="button" href="javascript: document.CommentEditForm.submit()">Add Comment</a>
+            	<input type="hidden" name="EditBlogKey" value="{{ blogEntry.key }}">
+        	</p>
+        </form>
+	</div>
+{% endblock %}
