@@ -1,9 +1,8 @@
 # Baker Store Front
 
-This is a store front for a baker written in google app engine, and using google checkout.
-It provides a product slideshow, and featured product list, and the ability to purchase goods.
-An admin page alows the creation of new products, the ability to upload image files, and change the 
-merchant id.
+This is a store front for a baker written in google app engine
+It provides a product slideshow, and featured product list.
+An admin page alows the creation of new products, the ability to upload image files, and change the merchant id.
 
 ## Run in development mode
 ```bash
@@ -21,3 +20,14 @@ gcloud auth login
 cd BakeryStoreFront/src
 dev_appserver.py app.yaml
 ```
+
+## Main page
+![ScreenshotMainPage](/images/doc/ScreenshotMainPage.png?raw=true&1=1 "ScreenshotMainPage")
+## Create product
+![ScreenshotCreateProduct](/images/doc/ScreenshotCreateProduct.png?raw=true&1=1 "ScreenshotCreateProduct")
+## Merchange info
+![ScreenshotMerchantConfig](/images/doc/ScreenshotMerchantConfig.png?raw=true&1=1 "ScreenshotMerchantConfig")
+## All Products
+![ScreenshotProductInofo](/images/doc/ScreenshotProductInfo.png?raw=true&1=1 "ScreenshotProductInfo")
+## Product details
+![ScreenshotProductDetails](/images/doc/ScreenshotProductDetails.png?raw=true&1=1 "Screenshot")
