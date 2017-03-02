@@ -22,12 +22,12 @@ dev_appserver.py app.yaml
 ```
 
 ## Main page
-![ScreenshotMainPage](/images/doc/ScreenshotMainPage.png?raw=true&1=1 "ScreenshotMainPage")
+![ScreenshotMainPage](/src/images/doc/ScreenshotMainPage.png?raw=true&1=1 "ScreenshotMainPage")
 ## Create product
-![ScreenshotCreateProduct](/images/doc/ScreenshotCreateProduct.png?raw=true&1=1 "ScreenshotCreateProduct")
+![ScreenshotCreateProduct](/src/images/doc/ScreenshotCreateProduct.png?raw=true&1=1 "ScreenshotCreateProduct")
 ## Merchange info
-![ScreenshotMerchantConfig](/images/doc/ScreenshotMerchantConfig.png?raw=true&1=1 "ScreenshotMerchantConfig")
+![ScreenshotMerchantConfig](/src/images/doc/ScreenshotMerchantConfig.png?raw=true&1=1 "ScreenshotMerchantConfig")
 ## All Products
-![ScreenshotProductInofo](/images/doc/ScreenshotProductInfo.png?raw=true&1=1 "ScreenshotProductInfo")
+![ScreenshotProductInofo](/src/images/doc/ScreenshotProductInfo.png?raw=true&1=1 "ScreenshotProductInfo")
 ## Product details
-![ScreenshotProductDetails](/images/doc/ScreenshotProductDetails.png?raw=true&1=1 "Screenshot")
+![ScreenshotProductDetails](/src/images/doc/ScreenshotProductDetails.png?raw=true&1=1 "Screenshot")
