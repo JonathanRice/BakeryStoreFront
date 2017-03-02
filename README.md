@@ -1,4 +1,4 @@
-# Baker Store Front
+# Bakery Store Front
 
 This is a store front for a baker written in google app engine
 It provides a product slideshow, and featured product list.
